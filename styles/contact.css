@@ -881,6 +881,13 @@ section
 6. Contact
 *********************************/
 
+.intro-contact-text
+{
+	text-align: justify;
+	margin: -5% 5% 5% 5%;
+	color: black;
+}
+
 .contact
 {
 	width: 100%;

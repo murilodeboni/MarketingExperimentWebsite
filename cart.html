@@ -26,7 +26,7 @@
 							<div class="logo"><a href="#">Sublime.</a></div>
 							<nav class="main_nav">
 								<ul>
-									<li class="hassubs active">
+									<!-- <li class="hassubs active">
 										<a href="index.html">Home</a>
 										<ul>
 											<li><a href="categories.html">Categories</a></li>
@@ -45,10 +45,10 @@
 											<li><a href="categories.html">Category</a></li>
 											<li><a href="categories.html">Category</a></li>
 										</ul>
-									</li>
-									<li><a href="#">Accessories</a></li>
-									<li><a href="#">Offers</a></li>
-									<li><a href="contact.html">Contact</a></li>
+									</li> -->
+									<li><a href="./index.html">Home</a></li>
+									<!-- <li><a href="#">Offers</a></li> -->
+									<li><a href="./contact.html">Contact</a></li>
 								</ul>
 							</nav>
 							<div class="header_extra ml-auto">
@@ -134,7 +134,7 @@
 					</form>
 				</div>
 				<ul class="page_menu_nav menu_mm">
-					<li class="page_menu_item has-children menu_mm">
+					<!-- <li class="page_menu_item has-children menu_mm">
 						<a href="index.html">Home<i class="fa fa-angle-down"></i></a>
 						<ul class="page_menu_selection menu_mm">
 							<li class="page_menu_item menu_mm"><a href="categories.html">Categories<i class="fa fa-angle-down"></i></a></li>
@@ -152,10 +152,10 @@
 							<li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
 							<li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
 						</ul>
-					</li>
-					<li class="page_menu_item menu_mm"><a href="index.html">Accessories<i class="fa fa-angle-down"></i></a></li>
-					<li class="page_menu_item menu_mm"><a href="#">Offers<i class="fa fa-angle-down"></i></a></li>
-					<li class="page_menu_item menu_mm"><a href="contact.html">Contact<i class="fa fa-angle-down"></i></a></li>
+					</li> -->
+					<li class="page_menu_item menu_mm"><a href="index.html">Home<i class="fa fa-angle-down"></i></a></li>
+					<!-- <li class="page_menu_item menu_mm"><a href="#">Offers<i class="fa fa-angle-down"></i></a></li> -->
+					<li class="page_menu_item menu_mm"><a href="contact.html">Contato<i class="fa fa-angle-down"></i></a></li>
 				</ul>
 			</div>
 		</div>
@@ -185,8 +185,8 @@
 								<div class="breadcrumbs">
 									<ul>
 										<li><a href="index.html">Home</a></li>
-										<li><a href="categories.html">Categories</a></li>
-										<li>Shopping Cart</li>
+										<li><a href="./contact.html">Produtos</a></li>
+										<li>Carrinho de Compras</li>
 									</ul>
 								</div>
 							</div>
@@ -205,9 +205,9 @@
 				<div class="col">
 					<!-- Column Titles -->
 					<div class="cart_info_columns clearfix">
-						<div class="cart_info_col cart_info_col_product">Product</div>
-						<div class="cart_info_col cart_info_col_price">Price</div>
-						<div class="cart_info_col cart_info_col_quantity">Quantity</div>
+						<div class="cart_info_col cart_info_col_product">Produto</div>
+						<div class="cart_info_col cart_info_col_price">Preço</div>
+						<div class="cart_info_col cart_info_col_quantity">Quantidade</div>
 						<div class="cart_info_col cart_info_col_total">Total</div>
 					</div>
 				</div>
@@ -228,13 +228,13 @@
 							</div>
 						</div>
 						<!-- Price -->
-						<div class="cart_item_price">$790.90</div>
+						<div class="cart_item_price"><p id="precoProd">$790,00</p></div>
 						<!-- Quantity -->
 						<div class="cart_item_quantity">
 							<div class="product_quantity_container">
 								<div class="product_quantity clearfix">
 									<span>Qty</span>
-									<input id="quantity_input" type="text" pattern="[0-9]*" value="1">
+									<input id="quantity_input" onChange="" type="text" pattern="[0-9]*" value="1">
 									<div class="quantity_buttons">
 										<div id="quantity_inc_button" class="quantity_inc quantity_control"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
 										<div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
@@ -243,27 +243,43 @@
 							</div>
 						</div>
 						<!-- Total -->
-						<div class="cart_item_total">$790.90</div>
+						<div class="cart_item_total">Total: <p id="calcularPrecoTotal">$790,00</p></div>
 					</div>
 
 				</div>
 			</div>
+
+			<script>
+				document.addEventListener("click", function() { 
+					var qtdeProd = document.getElementById("quantity_input").value;
+
+					var precoProd = document.getElementById("precoProd").innerHTML;
+					precoProd = precoProd.split(',');
+					precoProd = precoProd[0].substring(1);
+					
+					var valor = qtdeProd*precoProd;
+
+					var element = document.getElementById("calcularPrecoTotal");
+					element.innerHTML = '$'+valor+',00';
+				});
+			</script>
+
 			<div class="row row_cart_buttons">
 				<div class="col">
 					<div class="cart_buttons d-flex flex-lg-row flex-column align-items-start justify-content-start">
-						<div class="button continue_shopping_button"><a href="#">Continue shopping</a></div>
+						<div class="button continue_shopping_button"><a href="#">Finalizar</a></div>
 						<div class="cart_buttons_right ml-lg-auto">
-							<div class="button clear_cart_button"><a href="#">Clear cart</a></div>
-							<div class="button update_cart_button"><a href="#">Update cart</a></div>
+							<!-- <div class="button clear_cart_button"><a href="./index.html">Limpar Carrinho</a></div> -->
+							<!-- <div class="button update_cart_button"><a href="#">Update cart</a></div> -->
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="row row_extra">
+			<!-- <div class="row row_extra">
 				<div class="col-lg-4">
-					
+					 -->
 					<!-- Delivery -->
-					<div class="delivery">
+					<!-- <div class="delivery">
 						<div class="section_title">Shipping method</div>
 						<div class="section_subtitle">Select the one you want</div>
 						<div class="delivery_options">
@@ -283,10 +299,10 @@
 								<span class="delivery_price">Free</span>
 							</label>
 						</div>
-					</div>
+					</div> -->
 
 					<!-- Coupon Code -->
-					<div class="coupon">
+					<!-- <div class="coupon">
 						<div class="section_title">Coupon code</div>
 						<div class="section_subtitle">Enter your coupon code</div>
 						<div class="coupon_form_container">
@@ -296,11 +312,11 @@
 							</form>
 						</div>
 					</div>
-				</div>
+				</div> -->
 
-				<div class="col-lg-6 offset-lg-2">
+				<!-- <div class="col-lg-6 offset-lg-2">
 					<div class="cart_total">
-						<div class="section_title">Cart total</div>
+						<div class="section_title">Total</div>
 						<div class="section_subtitle">Final info</div>
 						<div class="cart_total_container">
 							<ul>
@@ -323,7 +339,7 @@
 				</div>
 			</div>
 		</div>		
-	</div>
+	</div> -->
 
 	<!-- Footer -->
 	
@@ -351,6 +367,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			</div>
 		</div>
 	</footer>
+	
 </div>
 
 <script src="js/jquery-3.2.1.min.js"></script>
